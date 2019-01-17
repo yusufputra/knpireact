@@ -85,11 +85,11 @@ body, html {
 #welcome-text {
 	margin-top: 50px;
 	background-color: #FFC000;
-	padding: 20px;
+	padding: 10px;
 }
 .container-fluid p {
 	margin: 0;
-	font-size: 2em;
+	font-size: 1.5em;
 	text-align: center;
 	color: #3E63B6;
 }
@@ -102,12 +102,47 @@ body, html {
 .col-sm-8 {
 	padding: 0 50px 0 0;
 }
-.col-sm-12 {
+.col-sm-5 {
 	padding: 0;
 }
-.col-sm-12 img {
-	width: 300px;
+.col-sm-5 img {
+	width: 250px;
 	height: 150px;
+}
+.col-sm-6 {
+	padding: 0;
+}
+.news-text h5 {
+	color: #3E63B6;
+}
+.news-text p {
+	margin: 0;
+}
+.news-text a {
+	text-decoration: none;
+	color: #3E63B6;
+}
+.news-text a:hover {
+	color: #FFC000;
+}
+.kategori-text {
+	margin-top: 12px;
+}
+.kategori-text a {
+	text-decoration: none;
+}
+.kategori-text p {
+	color: #3E63B6;
+}
+.kategori-text p:hover {
+	color: #FFC000;
+}
+.side-gallery {
+	margin-top: 50px;
+}
+.gallery-thumb img {
+	width: 100px;
+	height: 100px;
 }
 .card-footer {
 	padding: 10px;
@@ -130,7 +165,7 @@ body, html {
 }
 .col-sm-3 a {
 	text-decoration: none;
-		color: #FFFFFF;
+	color: #FFFFFF;
 }
 .page-footer {
 	background-color: #3E63B6;

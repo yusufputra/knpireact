@@ -15,29 +15,29 @@ export class Home extends Component {
 			<li data-target="#jumbotron-slide" data-slide-to="0" className="active"></li>
 			<li data-target="#jumbotron-slide" data-slide-to="1"></li>
 			<li data-target="#jumbotron-slide" data-slide-to="2"></li>
-</ul>
+		</ul>
 		<div className="carousel-inner">
 			<div className="carousel-item active">
-				<img src="/img/ace-1807511_1280.jpg" alt="" width="1100" height="500" />
+				<img src="/img/ace-1807511_1280.jpg" alt="" width="1100" height="500"/>
 				<div className="carousel-caption" id="cc1">
 					<h3>Categories</h3>
-					<br />
+					<br/>
 					<p>Some Caption Text</p>
 				</div>
 			</div>
 			<div className="carousel-item">
-				<img src="/img/barack-obama-1174489_960_720.jpg" alt="" width="1100" height="500" />
+				<img src="/img/barack-obama-1174489_960_720.jpg" alt="" width="1100" height="500"/>
 				<div className="carousel-caption" id="cc2">
 					<h3>Categories</h3>
-					<br />
+					<br/>
 					<p>Some Caption Text</p>
 				</div>
 			</div>
 			<div className="carousel-item">
-				<img src="/img/horse-1413604_1280-717x401.jpg" alt="" width="1100" height="500" />
+				<img src="/img/horse-1413604_1280-717x401.jpg" alt="" width="1100" height="500"/>
 				<div className="carousel-caption" id="cc3">
 					<h3 className="h3">Categories</h3>
-					<br />
+					<br/>
 					<p>Some Caption Text</p>
 				</div>
 			</div>
@@ -56,7 +56,7 @@ export class Home extends Component {
 		<div className="row">
 			<div className="col-sm-4">
 				<div className="featured-news">
-					<a href=""><img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt="" id="fn-1" /></a>
+					<a href=""><img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt="" id="fn-1"/></a>
 					<div className="carousel-caption" id="capt1">
 				Some Caption Here
 				</div>
@@ -64,7 +64,7 @@ export class Home extends Component {
 			</div>
 			<div className="col-sm-4">
 				<div className="featured-news">
-					<a href=""><img src="/img/football-461340_1280.jpg" alt="" id="fn-2" /></a>
+					<a href=""><img src="/img/football-461340_1280.jpg" alt="" id="fn-2"/></a>
 					<div className="carousel-caption" id="capt2">
 				Some Caption Here
 				</div>
@@ -72,7 +72,7 @@ export class Home extends Component {
 		  </div>
 			<div className="col-sm-4">
 				<div className="featured-news">
-					<a href=""><img src="/img/football-801047_1280.jpg" alt="" id="fn-3" className="img-fluid" /></a>
+					<a href=""><img src="/img/football-801047_1280.jpg" alt="" id="fn-3" className="img-fluid"/></a>
 					<div className="carousel-caption" id="capt3">
 				Some Caption Here
 				</div>
@@ -89,17 +89,100 @@ export class Home extends Component {
 				<div className="col-sm-8">
 					<h4 id="berita">BERITA TERBARU</h4>
 					<div className="row">
-						<div className="col-sm-12">
+						<div className="col-sm-5">
 							<div className="news-box">
-								<a href=""><img src="/img/pexels-photo-39811.jpeg" alt="" /></a>
+								<a href=""><img src="/img/pexels-photo-39811.jpeg" alt=""/></a>
+							</div>
+						</div>
+						<div className="col-sm-6">
+							<div className="news-text">
+								<h5>Some Title Here</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Sed elementum, ex in euismod bibendum, velit massa 
+								vulputate ligula, vitae facilisis massa sem a justo.</p>
+								<a href="#">Read More &#8811;</a>
 							</div>
 						</div>
 					</div>
+					<div className="row">
+						<div className="col-sm-5">
+							<div className="news-box">
+								<a href=""><img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt=""/></a>
+							</div>
+						</div>
+						<div className="col-sm-6">
+							<div className="news-text">
+								<h5>Some Title Here</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Sed elementum, ex in euismod bibendum, velit massa 
+								vulputate ligula, vitae facilisis massa sem a justo.</p>
+								<a href="#">Read More &#8811;</a>
+							</div>
+						</div>
+					</div>
+					
 				</div>
 				<div className="col-sm-4">
 					<div className="widget-area">
-						<aside id="kategori-text">
+						<aside className="kategori">
 							<h4>KATEGORI</h4>
+							<div className="kategori-text">
+								<a href="#"><p>Archive</p></a>
+								<a href="#"><p>Daerah</p></a>
+								<a href="#"><p>Nusantara</p></a>
+								<a href="#"><p>Suara Muda</p></a>
+								<a href="#"><p>Suara Pemerintah</p></a>
+								<a href="#"><p>Uncategorized</p></a>
+							</div>
+						</aside>
+						<aside className="side-gallery">
+							<h4>GALERI</h4>
+							<div className="row">
+								<div className="col-sm-4">
+									<div className="gallery-thumb">
+										<a href="#">
+											<img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt=""/>
+										</a>
+									</div>
+								</div>
+								<div className="col-sm-4">
+									<div className="gallery-thumb">
+										<a href="#">
+											<img src="/img/ace-1807511_1280.jpg" alt=""/>
+										</a>
+									</div>
+								</div>
+								<div className="col-sm-4">
+									<div className="gallery-thumb">
+										<a href="#">
+											<img src="/img/football-461340_1280.jpg" alt=""/>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div className="row">
+								<div className="col-sm-4">
+									<div className="gallery-thumb">
+										<a href="#">
+											<img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt=""/>
+										</a>
+									</div>
+								</div>
+								<div className="col-sm-4">
+									<div className="gallery-thumb">
+										<a href="#">
+											<img src="/img/ace-1807511_1280.jpg" alt=""/>
+										</a>
+									</div>
+								</div>
+								<div className="col-sm-4">
+									<div className="gallery-thumb">
+										<a href="#">
+											<img src="/img/football-461340_1280.jpg" alt=""/>
+										</a>
+									</div>
+								</div>
+							</div>
 						</aside>
 					</div>
 				</div>

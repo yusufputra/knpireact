@@ -5,6 +5,8 @@ import Head from './component/head';
 import Navbar from './component/navbar';
 import Footer from './component/footer';
 import Home from './page/home';
+import Pelatihan from './page/pelatihan';
+import { BrowserRouter as Router, Redirect ,Route,Switch} from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -12,7 +14,8 @@ class App extends Component {
       <div className="App">
 
         <Navbar></Navbar>
-        <Home></Home>
+        {(<Route path={`/home`} component={Home}/> || <Route path={`/`} component={Home}/>)}
+        <Route path={'/pelatihan'} component={Pelatihan}/>
         <Footer></Footer>
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

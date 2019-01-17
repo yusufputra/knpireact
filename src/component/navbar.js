@@ -20,7 +20,7 @@ export class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Beranda <span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="/home">Beranda <span className="sr-only">(current)</span></a>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,7 +41,7 @@ export class Navbar extends Component {
                         </div>
                     </li>
                             <li className="nav-item active">
-                        <a className="nav-link" href="#">Pelatihan <span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="pelatihan">Pelatihan <span className="sr-only">(current)</span></a>
                     </li>
                             <li className="nav-item active">
                         <a className="nav-link" href="#">Sosok <span className="sr-only">(current)</span></a>

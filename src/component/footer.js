@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import GaleriFoot from './galeriFoot'
 
 export class Footer extends Component {
   static propTypes = {
@@ -51,50 +52,14 @@ export class Footer extends Component {
                     <div className="col-sm-3">
                         <h4>GALERI</h4>
                         <div className="row">
-                            <div className="col-sm-4">
-                                <div className="gallery-icon">
-                                    <a href="#">
-                                        <img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="gallery-icon">
-                                    <a href="#">
-                                        <img src="/img/ace-1807511_1280.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="gallery-icon">
-                                    <a href="#">
-                                        <img src="/img/football-461340_1280.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
+                            <GaleriFoot></GaleriFoot>
+                            <GaleriFoot></GaleriFoot>
+                            <GaleriFoot></GaleriFoot>
                         </div>
                         <div className="row">
-                            <div className="col-sm-4">
-                                <div className="gallery-icon">
-                                    <a href="#">
-                                        <img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="gallery-icon">
-                                    <a href="#">
-                                        <img src="/img/ace-1807511_1280.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="gallery-icon">
-                                    <a href="#">
-                                        <img src="/img/football-461340_1280.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
+                            <GaleriFoot></GaleriFoot>
+                            <GaleriFoot></GaleriFoot>
+                            <GaleriFoot></GaleriFoot>
                         </div>
                     </div>
                     <div className="col-sm-3">

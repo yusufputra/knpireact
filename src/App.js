@@ -6,6 +6,15 @@ import Navbar from './component/navbar';
 import Footer from './component/footer';
 import Home from './page/home';
 import Pelatihan from './page/pelatihan';
+import NotFound from './page/notFound';
+import Adart from './page/adart';
+import NewsDaerah from './page/newsDaerah';
+import NewsNusantara from './page/newsNusantara';
+import NewsPemerintah from './page/newsPemerintah';
+import NewsMuda from './page/newsMuda';
+import Sejarah from './page/sejarah';
+import Struktur from './page/struktur';
+import Visimisi from './page/visimisi'
 import { BrowserRouter as Router, Redirect ,Route,Switch} from "react-router-dom";
 
 class App extends Component {
@@ -15,22 +24,17 @@ class App extends Component {
 
         <Navbar></Navbar>
         {(<Route path={`/home`} component={Home}/> || <Route path={`/`} component={Home}/>)}
+        <Route path={`/notfound`} component={NotFound}></Route>
+        <Route path={`/adart`} component={Adart}></Route>
         <Route path={'/pelatihan'} component={Pelatihan}/>
+        <Route path={'/sejarah'} component={Sejarah}/>
+        <Route path={'/struktur'} component={Struktur}/>
+        <Route path={'/visimisi'} component={Visimisi}/>
+        <Route path={'/news/daerah'} component={NewsDaerah}/>
+        <Route path={'/news/nusantara'} component={NewsNusantara}/>
+        <Route path={'/news/pemerintahan'} component={NewsPemerintah}/>
+        <Route path={'/news/muda'} component={NewsMuda}/>
         <Footer></Footer>
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header> */}
       </div>
     );
   }

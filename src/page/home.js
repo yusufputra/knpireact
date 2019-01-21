@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import FeatImg from '../component/featImg'
+import BeritaComp from '../component/beritaComp'
+import GaleriComp from '../component/galeriComp'
 import { connect } from 'react-redux'
 
 export class Home extends Component {
@@ -54,30 +57,9 @@ export class Home extends Component {
 			</div>
 			</div>
 		<div className="row">
-			<div className="col-sm-4">
-				<div className="featured-news">
-					<a href=""><img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt="" id="fn-1"/></a>
-					<div className="carousel-caption" id="capt1">
-				Some Caption Here
-				</div>
-				</div>
-			</div>
-			<div className="col-sm-4">
-				<div className="featured-news">
-					<a href=""><img src="/img/football-461340_1280.jpg" alt="" id="fn-2"/></a>
-					<div className="carousel-caption" id="capt2">
-				Some Caption Here
-				</div>
-				</div>
-		  </div>
-			<div className="col-sm-4">
-				<div className="featured-news">
-					<a href=""><img src="/img/football-801047_1280.jpg" alt="" id="fn-3" className="img-fluid"/></a>
-					<div className="carousel-caption" id="capt3">
-				Some Caption Here
-				</div>
-				</div>
-		  </div>
+			<FeatImg></FeatImg>
+			<FeatImg></FeatImg>
+			<FeatImg></FeatImg>
 		</div>
 	</div>
   <div className="container-fluid" id="welcome-text">
@@ -88,38 +70,9 @@ export class Home extends Component {
 			<div className="row">
 				<div className="col-sm-8">
 					<h4 id="berita">BERITA TERBARU</h4>
-					<div className="row">
-						<div className="col-sm-5">
-							<div className="news-box">
-								<a href=""><img src="/img/pexels-photo-39811.jpeg" alt=""/></a>
-							</div>
-						</div>
-						<div className="col-sm-6">
-							<div className="news-text">
-								<h5>Some Title Here</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-								Sed elementum, ex in euismod bibendum, velit massa 
-								vulputate ligula, vitae facilisis massa sem a justo.</p>
-								<a href="#">Read More &#8811;</a>
-							</div>
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-sm-5">
-							<div className="news-box">
-								<a href=""><img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt=""/></a>
-							</div>
-						</div>
-						<div className="col-sm-6">
-							<div className="news-text">
-								<h5>Some Title Here</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-								Sed elementum, ex in euismod bibendum, velit massa 
-								vulputate ligula, vitae facilisis massa sem a justo.</p>
-								<a href="#">Read More &#8811;</a>
-							</div>
-						</div>
-					</div>
+					<BeritaComp></BeritaComp>
+					<BeritaComp></BeritaComp>
+					<BeritaComp></BeritaComp>
 					
 				</div>
 				<div className="col-sm-4">
@@ -138,50 +91,14 @@ export class Home extends Component {
 						<aside className="side-gallery">
 							<h4>GALERI</h4>
 							<div className="row">
-								<div className="col-sm-4">
-									<div className="gallery-thumb">
-										<a href="#">
-											<img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt=""/>
-										</a>
-									</div>
-								</div>
-								<div className="col-sm-4">
-									<div className="gallery-thumb">
-										<a href="#">
-											<img src="/img/ace-1807511_1280.jpg" alt=""/>
-										</a>
-									</div>
-								</div>
-								<div className="col-sm-4">
-									<div className="gallery-thumb">
-										<a href="#">
-											<img src="/img/football-461340_1280.jpg" alt=""/>
-										</a>
-									</div>
-								</div>
+								<GaleriComp></GaleriComp>
+								<GaleriComp></GaleriComp>
+								<GaleriComp></GaleriComp>
 							</div>
 							<div className="row">
-								<div className="col-sm-4">
-									<div className="gallery-thumb">
-										<a href="#">
-											<img src="/img/pagatan_beach-wallpaper-2560x2048.jpg" alt=""/>
-										</a>
-									</div>
-								</div>
-								<div className="col-sm-4">
-									<div className="gallery-thumb">
-										<a href="#">
-											<img src="/img/ace-1807511_1280.jpg" alt=""/>
-										</a>
-									</div>
-								</div>
-								<div className="col-sm-4">
-									<div className="gallery-thumb">
-										<a href="#">
-											<img src="/img/football-461340_1280.jpg" alt=""/>
-										</a>
-									</div>
-								</div>
+								<GaleriComp></GaleriComp>
+								<GaleriComp></GaleriComp>
+								<GaleriComp></GaleriComp>
 							</div>
 						</aside>
 					</div>

@@ -2,12 +2,33 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import FeatImg from '../component/featImg'
 import BeritaComp from '../component/beritaComp'
-import GaleriComp from '../component/galeriComp'
-import { connect } from 'react-redux'
+import CarImg from '../component/carImg'
+import Sidebar from '../component/sidebar'
 
 export class Home extends Component {
-  static propTypes = {
-    prop: PropTypes
+  constructor(props){
+    super(props);
+    this.state = {
+	  loading: false,
+	  num: 0,
+      errorMessage: "",
+      data:[]
+	}
+  }
+  componentDidMount(){
+	  
+    fetch('http://localhost:5000/pubs/getContent',{
+      headers:{
+        'content-type':'application/json'
+      },
+    }).then(result=>{
+	  return result.json();
+	  console.log(result.json())
+    }).then(data=>{
+	  this.setState({data:data});
+	  
+    })
+    console.log(this.state.data)
   }
 
   render() {
@@ -20,30 +41,12 @@ export class Home extends Component {
 			<li data-target="#jumbotron-slide" data-slide-to="2"></li>
 		</ul>
 		<div className="carousel-inner">
-			<div className="carousel-item active">
-				<img src="/img/ace-1807511_1280.jpg" alt="" width="1100" height="500"/>
-				<div className="carousel-caption" id="cc1">
-					<h3>Categories</h3>
-					<br/>
-					<p>Some Caption Text</p>
-				</div>
-			</div>
-			<div className="carousel-item">
-				<img src="/img/barack-obama-1174489_960_720.jpg" alt="" width="1100" height="500"/>
-				<div className="carousel-caption" id="cc2">
-					<h3>Categories</h3>
-					<br/>
-					<p>Some Caption Text</p>
-				</div>
-			</div>
-			<div className="carousel-item">
-				<img src="/img/horse-1413604_1280-717x401.jpg" alt="" width="1100" height="500"/>
-				<div className="carousel-caption" id="cc3">
-					<h3 className="h3">Categories</h3>
-					<br/>
-					<p>Some Caption Text</p>
-				</div>
-			</div>
+			{ 
+			this.state.data.map((content,index)=>{
+				return index === 0 ?
+				<CarImg {...content} ind={index} className={'active'}/> :<CarImg {...content}/>
+			})}
+			
 		</div>
 		<a className="carousel-control-prev" href="#jumbotron-slide" data-slide="prev"> <span className="carousel-control-prev-icon"></span>
 		</a>
@@ -57,9 +60,10 @@ export class Home extends Component {
 			</div>
 			</div>
 		<div className="row">
-			<FeatImg></FeatImg>
-			<FeatImg></FeatImg>
-			<FeatImg></FeatImg>
+			{this.state.data.map((content,index)=>(
+				 <FeatImg {...content}/>
+			))}
+
 		</div>
 	</div>
   <div className="container-fluid" id="welcome-text">
@@ -70,39 +74,12 @@ export class Home extends Component {
 			<div className="row">
 				<div className="col-sm-8">
 					<h4 id="berita">BERITA TERBARU</h4>
-					<BeritaComp></BeritaComp>
-					<BeritaComp></BeritaComp>
-					<BeritaComp></BeritaComp>
+					{this.state.data.map((content,index)=>(
+						<BeritaComp {...content}/>
+				   ))}
 					
 				</div>
-				<div className="col-sm-4">
-					<div className="widget-area">
-						<aside className="kategori">
-							<h4>KATEGORI</h4>
-							<div className="kategori-text">
-								<a href="#"><p>Archive</p></a>
-								<a href="#"><p>Daerah</p></a>
-								<a href="#"><p>Nusantara</p></a>
-								<a href="#"><p>Suara Muda</p></a>
-								<a href="#"><p>Suara Pemerintah</p></a>
-								<a href="#"><p>Uncategorized</p></a>
-							</div>
-						</aside>
-						<aside className="side-gallery">
-							<h4>GALERI</h4>
-							<div className="row">
-								<GaleriComp></GaleriComp>
-								<GaleriComp></GaleriComp>
-								<GaleriComp></GaleriComp>
-							</div>
-							<div className="row">
-								<GaleriComp></GaleriComp>
-								<GaleriComp></GaleriComp>
-								<GaleriComp></GaleriComp>
-							</div>
-						</aside>
-					</div>
-				</div>
+				<Sidebar></Sidebar>
 			</div>
 		</div>
 </section>
@@ -111,12 +88,5 @@ export class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  
-})
-
-const mapDispatchToProps = {
-  
-}
 
 export default Home

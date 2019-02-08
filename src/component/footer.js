@@ -7,7 +7,54 @@ export class Footer extends Component {
   static propTypes = {
     prop: PropTypes
   }
+  constructor(props){
+        super(props);
+        this.state = {
+        errorMessage : "",
+        contact : {
+            nama : "",
+            email : "",
+            subjek : "",
+            pesan : ""
+        }
+        }
+    }
+    send = (event) =>{
+        const body ={
+        name : this.state.contact.nama,
+        email : this.state.contact.email,
+        subject : this.state.contact.subjek,
+        message : this.state.contact.pesan
+        }
+        console.log(body)
+        fetch('http://localhost:5000/pubs/postContact',{
+            method : 'POST',
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body:JSON.stringify(body)
+        }).then(res=>{
+            if(res.ok){
+                window.location.reload();
+                return alert('sukses');
+            }else{
+                return alert('gagal');
+            }
+        }).catch(err=>{
+            console.log(err)
+        })
+        event.preventDefault();
+    }
 
+    handlerEvent = e => {
+    let inputName = e.target.name;
+    let inputValue = e.target.value;
+    let content = Object.assign({}, this.state.contact);
+    console.log(content);
+    content[inputName] = inputValue;
+    this.setState({contact : content});
+    console.log(this.state.contact)
+    }
   render() {
     return (
       <div>
@@ -64,16 +111,20 @@ export class Footer extends Component {
                     </div>
                     <div className="col-sm-3">
                         <h4 id="kontak">KONTAK KAMI</h4>
-                        <form action="">
+                        <form onSubmit={this.send}>
                             <div className="form-group">
-                                <input type="text" className="form-control" placeholder="Nama Lengkap" />
+                                <input type="text" name="nama" className="form-control" placeholder="Nama Lengkap" onChange={this.handlerEvent} required/>
                             </div>
                             <div className="form-group">
-                                <input type="email" className="form-control" placeholder="Email" />
+                                <input type="email" name="email" className="form-control" placeholder="Email" onChange={this.handlerEvent} required/>
                             </div>
                             <div className="form-group">
-                                <textarea name="" className="form-control" id="" rows="2" placeholder="Pesan"></textarea>
+                                <input type="text" name="subjek" className="form-control" placeholder="Subject" onChange={this.handlerEvent} required/>
                             </div>
+                            <div className="form-group">
+                                <input type="text" className="form-control" name="pesan" id="pesan" placeholder="Pesan" onChange={this.handlerEvent} required/>
+                            </div>
+                            <button type="submit" className="btn btn-primary" id="kirim">Kirim</button>
                         </form>
                     </div>
                 </div>

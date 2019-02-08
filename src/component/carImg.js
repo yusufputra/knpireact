@@ -9,12 +9,12 @@ export class CarImg extends Component {
 
   render() {
     return (
-        <div className="carousel-item active">
-            <img src="/img/ace-1807511_1280.jpg" alt="" width="1100" height="500"/>
+        <div className={"carousel-item "+this.props.className}>
+            <img src={this.props.contenImg} alt="" width="1100" height="500"/>
             <div className="carousel-caption" id="cc1">
-                <h3>Categories</h3>
+                <h3>{this.props.contentCategory}</h3>
                 <br/>
-                <p>Some Caption Text</p>
+                <p>{this.props.contentTitle}</p>
             </div>
         </div>
     )

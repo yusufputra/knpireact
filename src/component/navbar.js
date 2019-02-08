@@ -7,7 +7,13 @@ export class Navbar extends Component {
     prop: PropTypes
   }
 
+  logout = (event) => {
+      localStorage.clear()
+      window.location.href('/admin')
+  }
+
   render() {
+      console.log(localStorage.token);
     return (
       <div>
         <div className="navbar navbar-expand-lg fixed-top">
@@ -46,22 +52,25 @@ export class Navbar extends Component {
                     <a className="nav-link" href="/notfound">Pelatihan <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item active">
-                    <a className="nav-link" href="/notfound">Sosok <span className="sr-only">(current)</span></a>
+                    <a className="nav-link" href="/sosok">Sosok <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item active">
-                    <a className="nav-link" href="/notfound">Unduh <span className="sr-only">(current)</span></a>
+                    <a className="nav-link" href="/unduh">Unduh <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item active">
-                    <a className="nav-link" href="/notfound">Pengaduan <span className="sr-only">(current)</span></a>
+                    <a className="nav-link" href="/pengaduan">Pengaduan <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item active">
-                    <a className="nav-link" href="/notfound">Kontak <span className="sr-only">(current)</span></a>
+                    <a className="nav-link" href="/kontak">Kontak <span className="sr-only">(current)</span></a>
                 </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
                 <button className="btn fa my-2 my-sm-0" type="submit">&#xf002;</button>
             </form>
+            {localStorage.token&&(
+                    <a className="nav-link" href="/home" onClick={this.logout}>Logout <span className="sr-only">(current)</span></a>
+            )}
         </div>
         </div>
       </div>

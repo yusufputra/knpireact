@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Login from './login'
 import { BrowserRouter as Router, Redirect ,Route,Switch} from "react-router-dom"
 import Addnews from './addnews'
-import Addcar from './addcar'
 import Addfiles from './addfiles'
 import Addsosok from './addsosok'
 
@@ -21,15 +20,11 @@ export class Dashboard extends Component {
             <section className="main-content">
                 <div className="container">
                     <h4 id="berita">Tambah Data</h4>
-                    <a href="/admin/addnews"><button className="btn btn-primary" id="kirim">News</button></a>
-                    <a href="/admin/addsosok"><button className="btn btn-primary" id="kirim">Sosok</button></a>
+                    <a href="/admin/addnews"><button className="btn btn-primary" id="kirim">News & sosok</button></a>
                     <a href="/admin/addfiles"><button className="btn btn-primary" id="kirim">Files</button></a>
-                    <a href="/admin/addcarousel"><button className="btn btn-primary" id="kirim">Carousel</button></a>
                     <Switch>
                         <Route path="/admin/addnews" component={Addnews}/>
-                        <Route path="/admin/addsosok" component={Addsosok}/>
                         <Route path="/admin/addfiles" component={Addfiles}/>
-                        <Route path="/admin/addcarousel" component={Addcar}/>
                     </Switch>    
                 </div>
             </section>

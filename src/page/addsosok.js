@@ -21,7 +21,7 @@ export class Addsosok extends Component {
                 <textarea className="form-control" name="konten" id="konten" aria-describedby="emailHelp" placeholder="konten" onChange={this.handlerEvent} required></textarea>
             </div>
             <div className="form-group">
-                <label for="gambar">Nama Ormas*</label>
+                <label for="gambar">Gambar</label>
                 <input type="file" className="form-control" name="gambar" id="gambar" placeholder="gambar" onChange={(event)=>{
                   event.preventDefault();
                   let ff = event.target.files[0];

@@ -2,10 +2,32 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Sidebar from '../component/sidebar'
+import Filecomp from '../component/filecomp';
 
 export class Unduh extends Component {
   static propTypes = {
     prop: PropTypes
+  }
+  constructor(props){
+    super(props);
+    this.state = {
+      loading: false,
+      errorMessage: "",
+      content:[]
+    }
+
+  }
+  componentDidMount(){
+    fetch('http://localhost:5000/pubs/getFiles',{
+      headers:{
+        'content-type':'application/json'
+      },
+    }).then(result=>{
+      return result.json();
+    }).then(data=>{
+      this.setState({content:data});
+    })
+    console.log(this.state.content)
   }
 
   render() {
@@ -19,30 +41,9 @@ export class Unduh extends Component {
                         <h4 id="berita">UNDUH</h4>
                         <p>Berikut adalah dokumen resmi dari KNPI yang dapat di Unduh :</p>
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="unduhan">
-                                    <img src="image/Pdf.png" alt="" class="thumb"/>
-                                    <a href="">
-                                        <p>Some File Can Be Downloaded</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="unduhan">
-                                    <img src="image/Pdf.png" alt="" class="thumb"/>
-                                    <a href="">
-                                        <p>Some File Can Be Downloaded</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="unduhan">
-                                    <img src="image/Pdf.png" alt="" class="thumb"/>
-                                    <a href="">
-                                        <p>Some File Can Be Downloaded</p>
-                                    </a>
-                                </div>
-                            </div>
+                        {this.state.content.map(data=>(
+                          <Filecomp {...data}></Filecomp>
+                        ))}                            
                         </div>
                     </div>
                     <Sidebar></Sidebar>
@@ -54,12 +55,5 @@ export class Unduh extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  
-})
-
-const mapDispatchToProps = {
-  
-}
 
 export default Unduh

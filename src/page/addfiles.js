@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { Buffer } from 'buffer';
+
 
 const URL_FILE ='http://localhost:5000/api/postFile';
 export class Addfiles extends Component {
@@ -64,7 +63,7 @@ export class Addfiles extends Component {
                 <input type="text" className="form-control" name="judul" id="judul" aria-describedby="emailHelp" placeholder="judul" onChange={this.handlerEvent} required/>
             </div>
             <div className="form-group">
-                <label for="gambar">Nama Ormas*</label>
+                <label for="gambar">Gambar</label>
                 <input type="file" className="form-control" name="gambar" id="gambar" placeholder="gambar" onChange={(event)=>{
                   event.preventDefault();
                   let ff = event.target.files[0];
@@ -82,10 +81,15 @@ export class Addfiles extends Component {
                     },
                     method: 'POST',
                     body : data
-                  }).then(res=>{
-                      console.log(res);
-                  }).catch(err=>{
-                      console.log(err);
+                  }).then(ress=>{
+                      return ress.json();
+                  }).then(dataaa=>{
+                      let payload = {
+                        judul : this.state.data.judul,
+                        gambar : dataaa.filepath
+                      };
+                      this.setState({data: payload});
+                      console.log(this.state.data);
                   })
                 }} required/>
             </div>
